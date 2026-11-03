@@ -1,0 +1,158 @@
+/* =========================================
+   CONFIGURAÇÃO GERAL DA PÁGINA
+   ========================================= */
+body {
+    background-image: url('Mansão.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-color: #0f0f0f; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   MENU INICIAL
+   ========================================= */
+.menu {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* TÍTULO */
+.titulo {
+    color: #d6d1cc;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 55px;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.08),
+        0 0 25px rgba(120,0,0,0.25);
+}
+
+/* SUBTÍTULO */
+.subtitulo {
+    color: #77716d;
+    font-size: 15px;
+    font-style: italic;
+    margin-bottom: 60px;
+    max-width: 500px;
+}
+
+/* ÁREA DOS BOTÕES */
+.menu-botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 260px;
+}
+
+/* BOTÕES */
+.menu-botoes a {
+    display: block;
+    padding: 12px 20px;
+    border: 1px solid #3b3330;
+    color: #aaa09a;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 3px;
+    background: rgba(15,15,15,0.7);
+    transition:
+        color 0.3s,
+        border-color 0.3s,
+        background 0.3s,
+        transform 0.2s;
+}
+
+/* PASSAR O MOUSE */
+.menu-botoes a:hover {
+    color: #e0c7b0;
+    border-color: #72544a;
+    background: rgba(60,20,20,0.25);
+    transform: translateX(4px);
+    text-shadow: 0 0 8px rgba(130,0,0,0.5);
+}
+
+/* CLIQUE */
+.menu-botoes a:active {
+    transform: translateX(2px);
+}
+
+/* =========================================
+   ESTRUTURA DA HISTÓRIA (PASSAGENS)
+   ========================================= */
+
+.caixa-historia {
+    max-width: 650px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(15, 15, 15, 0.85); /* Fundo preto semitransparente para destacar o texto da imagem */
+    border: 1px solid #2a2220;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+/* TEXTO DA NARRATIVA */
+.texto-narrativo {
+    color: #c5bdbc;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.texto-narrativo p {
+    margin-bottom: 20px;
+}
+
+/* ÁREA DE ESCOLHAS */
+.opcoes-escolha {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid #3b3330;
+    padding-top: 25px;
+}
+
+/* LINKS DE ESCOLA (SIMULANDO TWINE) */
+.link-escolha {
+    color: #bfa38a;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    transition: color 0.2s, padding-left 0.2s;
+    display: inline-block;
+}
+
+.link-escolha:hover {
+    color: #e0c7b0;
+    padding-left: 8px; /* Pequeno empurrão para o lado ao passar o mouse */
+    text-shadow: 0 0 5px rgba(224, 199, 176, 0.3);
+}
+
+/* BOTÃO DE VOLTAR AO MENU */
+.link-voltar {
+    color: #5e5754;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.link-voltar:hover {
+    color: #8c817d;
+}
