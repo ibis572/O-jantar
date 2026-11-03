@@ -1,158 +1,233 @@
-/* =========================================
-   CONFIGURAÇÃO GERAL DA PÁGINA
-   ========================================= */
-body {
-    background-image: url('Mansão.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    background-color: #0f0f0f; 
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #111;
+    color: #e8e3dc;
 }
 
 
-/* =========================================
-   MENU INICIAL
-   ========================================= */
+/* MENU INICIAL */
+
 .menu {
-    min-height: 80vh;
+    width: 100%;
+    height: 100vh;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.80)
+        ),
+        url("assets/backgrounds/Mansão.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu-content {
     text-align: center;
-}
-
-/* TÍTULO */
-.titulo {
-    color: #d6d1cc;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 55px;
-    letter-spacing: 8px;
-    margin-bottom: 10px;
-    text-shadow:
-        0 0 10px rgba(255,255,255,0.08),
-        0 0 25px rgba(120,0,0,0.25);
-}
-
-/* SUBTÍTULO */
-.subtitulo {
-    color: #77716d;
-    font-size: 15px;
-    font-style: italic;
-    margin-bottom: 60px;
+    width: 90%;
     max-width: 500px;
 }
 
-/* ÁREA DOS BOTÕES */
-.menu-botoes {
+.game-title {
+    font-size: 70px;
+    letter-spacing: 12px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 60px;
+}
+
+.menu-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 18px;
-    width: 260px;
 }
 
-/* BOTÕES */
-.menu-botoes a {
-    display: block;
-    padding: 12px 20px;
-    border: 1px solid #3b3330;
-    color: #aaa09a;
-    text-decoration: none;
-    font-size: 15px;
+.menu-buttons button {
+    width: 230px;
+    padding: 13px;
+
+    background: transparent;
+    border: 1px solid #777;
+    color: #e8e3dc;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-buttons button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #c9b7a0;
     letter-spacing: 3px;
-    background: rgba(15,15,15,0.7);
-    transition:
-        color 0.3s,
-        border-color 0.3s,
-        background 0.3s,
-        transform 0.2s;
 }
 
-/* PASSAR O MOUSE */
-.menu-botoes a:hover {
-    color: #e0c7b0;
-    border-color: #72544a;
-    background: rgba(60,20,20,0.25);
-    transform: translateX(4px);
-    text-shadow: 0 0 8px rgba(130,0,0,0.5);
+.version {
+    margin-top: 70px;
+    font-size: 11px;
+    color: #777;
 }
 
-/* CLIQUE */
-.menu-botoes a:active {
-    transform: translateX(2px);
+
+/* TELA DO JOGO */
+
+.game {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: #111;
 }
 
-/* =========================================
-   ESTRUTURA DA HISTÓRIA (PASSAGENS)
-   ========================================= */
-
-.caixa-historia {
-    max-width: 650px;
-    width: 90%;
-    margin: 40px auto;
-    padding: 30px;
-    background: rgba(15, 15, 15, 0.85); /* Fundo preto semitransparente para destacar o texto da imagem */
-    border: 1px solid #2a2220;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+.hidden {
+    display: none !important;
 }
 
-/* TEXTO DA NARRATIVA */
-.texto-narrativo {
-    color: #c5bdbc;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    text-align: justify;
+
+/* CENÁRIO */
+
+.scene-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("assets/backgrounds/Mansão.jpg");
+
+    background-size: cover;
+    background-position: center;
 }
 
-.texto-narrativo p {
+
+/* TÍTULO DO CAPÍTULO */
+
+.chapter-title {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+
+    text-align: center;
+    letter-spacing: 8px;
+    font-size: 14px;
+
+    color: #c9b7a0;
+}
+
+
+/* CAIXA DE DIÁLOGO */
+
+.dialogue-box {
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 85%;
+    max-width: 1100px;
+    min-height: 190px;
+
+    padding: 30px 40px;
+
+    background: rgba(12, 12, 12, 0.92);
+    border: 1px solid rgba(201, 183, 160, 0.45);
+
+    cursor: pointer;
+}
+
+.speaker {
+    font-size: 19px;
+    color: #c9b7a0;
     margin-bottom: 20px;
 }
 
-/* ÁREA DE ESCOLHAS */
-.opcoes-escolha {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-top: 1px solid #3b3330;
-    padding-top: 25px;
+.dialogue-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e8e3dc;
 }
 
-/* LINKS DE ESCOLA (SIMULANDO TWINE) */
-.link-escolha {
-    color: #bfa38a;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    transition: color 0.2s, padding-left 0.2s;
-    display: inline-block;
+.continue-indicator {
+    position: absolute;
+    right: 22px;
+    bottom: 15px;
+
+    font-size: 12px;
+    color: #c9b7a0;
+
+    animation: blink 1s infinite;
 }
 
-.link-escolha:hover {
-    color: #e0c7b0;
-    padding-left: 8px; /* Pequeno empurrão para o lado ao passar o mouse */
-    text-shadow: 0 0 5px rgba(224, 199, 176, 0.3);
+.next-button {
+    position: absolute;
+    bottom: 15px;
+    right: 8%;
+
+    background: transparent;
+    border: none;
+    color: #aaa;
+
+    font-family: Georgia, serif;
+    cursor: pointer;
 }
 
-/* BOTÃO DE VOLTAR AO MENU */
-.link-voltar {
-    color: #5e5754;
-    text-decoration: none;
-    font-size: 13px;
-    margin-top: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.2s;
+.next-button:hover {
+    color: white;
 }
 
-.link-voltar:hover {
-    color: #8c817d;
+
+/* ANIMAÇÃO */
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+
+/* TELAS MENORES */
+
+@media (max-width: 600px) {
+
+    .game-title {
+        font-size: 45px;
+    }
+
+    .dialogue-box {
+        width: 94%;
+        padding: 25px 20px;
+        min-height: 180px;
+    }
+
+    .dialogue-text {
+        font-size: 16px;
+    }
 }

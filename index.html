@@ -1,41 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome do Jogo</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>O Jantar.</title>
+
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
-    <div class="menu">
+    <!-- MENU INICIAL -->
+    <main id="menu" class="menu">
 
-        <div class="titulo">
-            O jantar.
+        <div class="menu-content">
+
+            <h1 class="game-title">O JANTAR.</h1>
+
+            <p class="subtitle">
+                Uma história sobre aquilo que esquecemos.
+            </p>
+
+            <nav class="menu-buttons">
+
+                <button id="start-button">
+                    Iniciar
+                </button>
+
+                <button id="continue-button">
+                    Continuar
+                </button>
+
+                <button id="options-button">
+                    Opções
+                </button>
+
+            </nav>
+
+            <p class="version">Versão 0.1</p>
+
         </div>
 
-        <div class="subtitulo">
-            Uma história sobre aquilo que não deveria existir.
+    </main>
+
+
+    <!-- TELA DO PRÓLOGO -->
+    <main id="game" class="game hidden">
+
+        <div class="scene-background"></div>
+
+        <div id="chapter-title" class="chapter-title">
+            PRÓLOGO
         </div>
 
-        <div class="menu-botoes">
+        <section class="dialogue-box">
 
-            <a href="prologo.html">COMEÇAR</a>
+            <p id="speaker" class="speaker"></p>
 
-            <a href="prologo.html">CONTINUAR</a>
+            <p id="dialogue" class="dialogue-text">
+                Clique em Iniciar para começar.
+            </p>
 
-            <a href="configuracoes.html">CONFIGURAÇÕES</a>
+            <span class="continue-indicator">▼</span>
 
-            <a href="creditos.html">CRÉDITOS</a>
+        </section>
 
-        </div>
+        <button class="next-button">
+            Continuar
+        </button>
 
-    </div>
-    <!-- ... resto do código do seu menu ... -->
-    </div>
+    </main>
 
-    <!-- Adicione esta linha bem aqui: -->
-    <script src="script.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script src="./script.js?v=2"></script>
+
 </body>
 </html>
-
