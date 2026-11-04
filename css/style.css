@@ -29,7 +29,7 @@ body {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.80)
         ),
-        url("assets/backgrounds/Mansão.jpg");
+        url("../assets/backgrounds/Mansão.jpg");
 
     background-size: cover;
     background-position: center;

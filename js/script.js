@@ -277,6 +277,14 @@ function abrirOpcoes() {
 }
 
 
+/* CONECTAR BOTÕES */
+
+startButton.addEventListener("click", iniciarJogo);
+
+continueButton.addEventListener("click", continuarJogo);
+
+optionsButton.addEventListener("click", abrirOpcoes);
+
 /* ========================================
    CONECTAR BOTÕES
 ======================================== */
