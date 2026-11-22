@@ -1,5 +1,7 @@
 
-/* CONFIGURAÇÕES GERAIS */
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
 
 * {
     margin: 0;
@@ -13,12 +15,23 @@ body {
     color: #e8e3dc;
 }
 
+button {
+    font-family: Georgia, serif;
+}
 
-/* MENU INICIAL */
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================
+   MENU INICIAL
+======================================== */
 
 .menu {
     width: 100%;
     height: 100vh;
+    height: 100svh;
 
     display: flex;
     align-items: center;
@@ -71,7 +84,6 @@ body {
     border: 1px solid #777;
     color: #e8e3dc;
 
-    font-family: Georgia, serif;
     font-size: 17px;
 
     cursor: pointer;
@@ -91,116 +103,221 @@ body {
 }
 
 
-/* TELA DO JOGO */
+/* ========================================
+   TELA PRINCIPAL DO JOGO
+======================================== */
 
 .game {
+    position: relative;
+
     width: 100%;
     height: 100vh;
-    position: relative;
+    height: 100svh;
+
     overflow: hidden;
     background: #111;
 }
 
-.hidden {
-    display: none !important;
-}
 
-
-/* CENÁRIO */
+/* ========================================
+   CENÁRIOS
+======================================== */
 
 .scene-background {
     position: absolute;
     inset: 0;
 
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.65)
-        ),
-        url("assets/backgrounds/Exterior Mansão.jpg");
+    z-index: 0;
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scene-background::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.10) 35%,
+            rgba(0, 0, 0, 0.40) 65%,
+            rgba(0, 0, 0, 0.65)
+        );
+
+    pointer-events: none;
 }
 
 
-/* TÍTULO DO CAPÍTULO */
+/* ========================================
+   TÍTULO DOS CAPÍTULOS
+======================================== */
 
 .chapter-title {
     position: absolute;
-    top: 40px;
+
+    top: 45px;
+    left: 0;
+
     width: 100%;
 
+    z-index: 3;
+
     text-align: center;
-    letter-spacing: 8px;
+
     font-size: 14px;
+    letter-spacing: 8px;
+    font-weight: normal;
 
     color: #c9b7a0;
+
+    text-shadow: 0 2px 8px #000;
+
+    pointer-events: none;
 }
 
 
-/* CAIXA DE DIÁLOGO */
+/* ========================================
+   CAIXA DE DIÁLOGO
+======================================== */
 
 .dialogue-box {
     position: absolute;
-    bottom: 55px;
+
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
 
-    width: 85%;
-    max-width: 1100px;
-    min-height: 190px;
+    transform: translate(-50%, -50%);
 
-    padding: 30px 40px;
+    width: 90%;
+    max-width: 1400px;
 
-    background: rgba(12, 12, 12, 0.92);
-    border: 1px solid rgba(201, 183, 160, 0.45);
+    min-height: 320px;
+    max-height: 60vh;
+
+    padding: 50px 70px 65px;
+
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(10, 10, 12, 0.91);
+
+    border: 1px solid rgba(201, 183, 160, 0.55);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.45),
+        inset 0 0 25px rgba(0, 0, 0, 0.25);
 
     cursor: pointer;
+
+    overflow-y: auto;
 }
+
+
+/* ========================================
+   NOME DO PERSONAGEM
+======================================== */
 
 .speaker {
-    font-size: 19px;
+    font-size: 25px;
+
     color: #c9b7a0;
-    margin-bottom: 20px;
+
+    margin-bottom: 28px;
+
+    letter-spacing: 1.5px;
+    font-weight: normal;
 }
 
+
+/* ========================================
+   TEXTO DOS DIÁLOGOS
+======================================== */
+
 .dialogue-text {
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 24px;
+
+    line-height: 1.9;
+
     color: #e8e3dc;
+
+    max-width: 1200px;
 }
+
+
+/* ========================================
+   INDICADOR DE CONTINUAÇÃO
+======================================== */
 
 .continue-indicator {
     position: absolute;
-    right: 22px;
-    bottom: 15px;
 
-    font-size: 12px;
+    right: 35px;
+    bottom: 22px;
+
+    font-size: 15px;
+
     color: #c9b7a0;
 
-    animation: blink 1s infinite;
+    animation: blink 1.2s infinite;
 }
+
+
+/* ========================================
+   BOTÃO CONTINUAR
+======================================== */
 
 .next-button {
     position: absolute;
-    bottom: 15px;
-    right: 8%;
+
+    bottom: 2vh;
+    right: 6%;
+
+    z-index: 5;
 
     background: transparent;
     border: none;
+
     color: #aaa;
 
-    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .next-button:hover {
-    color: white;
+    color: #e8e3dc;
+    letter-spacing: 2px;
 }
 
 
-/* ANIMAÇÃO */
+/* ========================================
+   SISTEMA DE PERSONAGENS
+   SPRITES DESATIVADOS TEMPORARIAMENTE
+======================================== */
+
+.character-container {
+    display: none;
+}
+
+.character-sprite {
+    display: none;
+}
+
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
 
 @keyframes blink {
     0%, 100% {
@@ -213,94 +330,156 @@ body {
 }
 
 
-/* TELAS MENORES */
+/* ========================================
+   TELAS MENORES
+======================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .game-title {
-        font-size: 45px;
+        font-size: 48px;
+        letter-spacing: 7px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 45px;
+    }
+
+    .chapter-title {
+        top: 25px;
+        font-size: 12px;
+        letter-spacing: 5px;
+    }
+
+    .dialogue-box {
+        width: 92%;
+
+        min-height: 260px;
+        max-height: 65vh;
+
+        padding: 35px 28px 50px;
+    }
+
+    .speaker {
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+    .dialogue-text {
+        font-size: 19px;
+        line-height: 1.75;
+    }
+
+    .continue-indicator {
+        right: 18px;
+        bottom: 14px;
+    }
+
+    .next-button {
+        right: 5%;
+        bottom: 1vh;
+    }
+}
+
+
+/* ========================================
+   TELAS MUITO PEQUENAS
+======================================== */
+
+@media (max-width: 400px) {
+
+    .game-title {
+        font-size: 38px;
+        letter-spacing: 5px;
     }
 
     .dialogue-box {
         width: 94%;
-        padding: 25px 20px;
-        min-height: 180px;
+
+        min-height: 240px;
+
+        padding: 28px 20px 45px;
     }
 
     .dialogue-text {
         font-size: 16px;
+        line-height: 1.65;
     }
+
+    .speaker {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
 }
 
 
 /* ========================================
-   SISTEMA DE PERSONAGENS
+   SISTEMA DE ESCOLHAS
 ======================================== */
 
-.character-container {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
+.choice-area {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    pointer-events: none;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 25px;
 }
 
-.character-sprite {
-    position: relative;
-
-    max-height: 75vh;
-    max-width: 65vw;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    margin-bottom: 210px;
-
-    transition: opacity 0.3s ease;
+.choice-question {
+    color: #c9b7a0;
+    font-size: 21px;
+    line-height: 1.6;
 }
 
-.character-sprite.hidden {
-    display: none;
+.choice-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
+.choice-options button {
+    width: 100%;
+    padding: 16px 20px;
 
-/* ========================================
-   CAMADAS DA INTERFACE
-======================================== */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 183, 160, 0.45);
 
-.scene-background {
-    z-index: 0;
+    color: #e8e3dc;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.chapter-title {
-    z-index: 3;
+.choice-options button:hover {
+    background: rgba(201, 183, 160, 0.12);
+    border-color: #c9b7a0;
+    padding-left: 28px;
 }
 
-.dialogue-box {
-    z-index: 4;
+.choice-options button:focus-visible {
+    outline: 2px solid #c9b7a0;
+    outline-offset: 3px;
 }
 
-.next-button {
-    z-index: 5;
-}
+@media (max-width: 768px) {
 
+    .choice-area {
+        gap: 20px;
+        margin-top: 18px;
+    }
 
-/* ========================================
-   RESPONSIVIDADE DOS PERSONAGENS
-======================================== */
+    .choice-question {
+        font-size: 18px;
+    }
 
-@media (max-width: 600px) {
-
-    .character-sprite {
-        max-height: 55vh;
-        max-width: 85vw;
-        margin-bottom: 210px;
+    .choice-options button {
+        font-size: 16px;
+        padding: 13px 15px;
     }
 
 }

@@ -43,16 +43,6 @@
         <!-- CENÁRIO -->
         <div id="scene-background" class="scene-background"></div>
 
-        <!-- PERSONAGEM -->
-        <div class="character-container">
-            <img
-                id="character-sprite"
-                class="character-sprite hidden"
-                src=""
-                alt="Personagem em cena"
-            >
-        </div>
-
         <!-- TÍTULO -->
         <div id="chapter-title" class="chapter-title">
             PRÓLOGO
@@ -67,7 +57,16 @@
                 Clique em Iniciar para começar.
             </p>
 
-            <span class="continue-indicator">▼</span>
+            <!-- ESCOLHAS -->
+            <div id="choice-area" class="choice-area hidden">
+
+                <p id="choice-question" class="choice-question"></p>
+
+                <div id="choice-options" class="choice-options"></div>
+
+            </div>
+
+            <span id="continue-indicator" class="continue-indicator">▼</span>
 
         </section>
 
@@ -83,4 +82,3 @@
 
 </body>
 </html>
-
