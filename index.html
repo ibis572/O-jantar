@@ -18,26 +18,16 @@
 
         <div class="menu-content">
 
-            <h1 class="game-title">O JANTAR.</h1>
+            <h1 class="game-title">O Jantar.</h1>
 
             <p class="subtitle">
                 Uma história sobre aquilo que esquecemos.
             </p>
 
             <nav class="menu-buttons">
-
-                <button id="start-button">
-                    Iniciar
-                </button>
-
-                <button id="continue-button">
-                    Continuar
-                </button>
-
-                <button id="options-button">
-                    Opções
-                </button>
-
+                <button id="start-button">Iniciar</button>
+                <button id="continue-button">Continuar</button>
+                <button id="options-button">Opções</button>
             </nav>
 
             <p class="version">Versão 0.1</p>
@@ -47,15 +37,28 @@
     </main>
 
 
-    <!-- TELA DO PRÓLOGO -->
+    <!-- TELA DO JOGO -->
     <main id="game" class="game hidden">
 
-        <div class="scene-background"></div>
+        <!-- CENÁRIO -->
+        <div id="scene-background" class="scene-background"></div>
 
+        <!-- PERSONAGEM -->
+        <div class="character-container">
+            <img
+                id="character-sprite"
+                class="character-sprite hidden"
+                src=""
+                alt="Personagem em cena"
+            >
+        </div>
+
+        <!-- TÍTULO -->
         <div id="chapter-title" class="chapter-title">
             PRÓLOGO
         </div>
 
+        <!-- DIÁLOGO -->
         <section class="dialogue-box">
 
             <p id="speaker" class="speaker"></p>
@@ -68,7 +71,7 @@
 
         </section>
 
-        <button class="next-button">
+        <button class="next-button" id="next-button">
             Continuar
         </button>
 
@@ -76,7 +79,8 @@
 
 
     <!-- JAVASCRIPT -->
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 
 </body>
 </html>
+

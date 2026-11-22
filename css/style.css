@@ -29,7 +29,7 @@ body {
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.80)
         ),
-        url("../assets/backgrounds/Mansão.jpg");
+        url("../assets/backgrounds/Tela Inicial.jpg");
 
     background-size: cover;
     background-position: center;
@@ -117,7 +117,7 @@ body {
             rgba(0, 0, 0, 0.35),
             rgba(0, 0, 0, 0.65)
         ),
-        url("assets/backgrounds/Mansão.jpg");
+        url("assets/backgrounds/Exterior Mansão.jpg");
 
     background-size: cover;
     background-position: center;
@@ -230,4 +230,77 @@ body {
     .dialogue-text {
         font-size: 16px;
     }
+}
+
+
+/* ========================================
+   SISTEMA DE PERSONAGENS
+======================================== */
+
+.character-container {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.character-sprite {
+    position: relative;
+
+    max-height: 75vh;
+    max-width: 65vw;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 210px;
+
+    transition: opacity 0.3s ease;
+}
+
+.character-sprite.hidden {
+    display: none;
+}
+
+
+/* ========================================
+   CAMADAS DA INTERFACE
+======================================== */
+
+.scene-background {
+    z-index: 0;
+}
+
+.chapter-title {
+    z-index: 3;
+}
+
+.dialogue-box {
+    z-index: 4;
+}
+
+.next-button {
+    z-index: 5;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DOS PERSONAGENS
+======================================== */
+
+@media (max-width: 600px) {
+
+    .character-sprite {
+        max-height: 55vh;
+        max-width: 85vw;
+        margin-bottom: 210px;
+    }
+
 }
