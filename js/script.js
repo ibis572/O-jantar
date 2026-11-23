@@ -3,10 +3,7 @@ import { prologo } from "./dialogues.js";
 import { cenas } from "./scenes.js";
 import { capitulos } from "./chapters.js";
 
-
-/* ========================================
-   ELEMENTOS DA TELA
-======================================== */
+//elementos da tela
 
 const menu = document.getElementById("menu");
 const game = document.getElementById("game");
@@ -31,16 +28,12 @@ const choiceOptions = document.getElementById("choice-options");
 const continueIndicator = document.getElementById("continue-indicator");
 
 
-/* ========================================
-   CONFIGURAÇÕES DO SALVAMENTO
-======================================== */
+//configurações do save
 
 const SAVE_KEY = "ojantar_save_v1";
 
 
-/* ========================================
-   ESTADO DO JOGO
-======================================== */
+//estado do jogo
 
 let etapa = "prologo";
 
@@ -55,9 +48,7 @@ let pontuacao = 50;
 let respostaAtual = "";
 
 
-/* ========================================
-   SALVAMENTO AUTOMÁTICO
-======================================== */
+//save automático
 
 function salvarProgresso() {
 
@@ -121,9 +112,7 @@ function apagarSalvamento() {
 }
 
 
-/* ========================================
-   INICIAR JOGO
-======================================== */
+//iniciar
 
 function iniciarJogo() {
 
@@ -153,9 +142,7 @@ function iniciarJogo() {
 }
 
 
-/* ========================================
-   CENÁRIOS
-======================================== */
+//cenários
 
 function trocarCenario(nomeArquivo) {
 
@@ -165,9 +152,7 @@ function trocarCenario(nomeArquivo) {
 }
 
 
-/* ========================================
-   PRÓLOGO
-======================================== */
+//prólogo
 
 function mostrarCenaPrologo() {
 
@@ -206,9 +191,7 @@ function mostrarFalaPrologo() {
 }
 
 
-/* ========================================
-   INICIAR CAPÍTULOS
-======================================== */
+//iniciar caps
 
 function iniciarCapitulos() {
 
@@ -258,9 +241,7 @@ function mostrarFalaCapitulo() {
 }
 
 
-/* ========================================
-   MOSTRAR ESCOLHAS
-======================================== */
+//mostrar escolhas
 
 function mostrarEscolha() {
 
@@ -305,9 +286,7 @@ function mostrarEscolha() {
 }
 
 
-/* ========================================
-   REGISTRAR ESCOLHA
-======================================== */
+//registrar escolha
 
 function registrarEscolha(opcao) {
 
@@ -333,9 +312,7 @@ function registrarEscolha(opcao) {
 }
 
 
-/* ========================================
-   AVANÇAR JOGO
-======================================== */
+//avançar
 
 function avancarJogo() {
 
@@ -367,9 +344,7 @@ function avancarJogo() {
 }
 
 
-/* ========================================
-   AVANÇAR PRÓLOGO
-======================================== */
+// avançar prol.
 
 function avancarPrologo() {
 
@@ -404,9 +379,7 @@ function avancarPrologo() {
 }
 
 
-/* ========================================
-   AVANÇAR FALAS DOS CAPÍTULOS
-======================================== */
+//avançar caps.
 
 function avancarFalaCapitulo() {
 
@@ -429,9 +402,7 @@ function avancarFalaCapitulo() {
 }
 
 
-/* ========================================
-   AVANÇAR APÓS UMA ESCOLHA
-======================================== */
+//avançar após escolha
 
 function avancarAposResposta() {
 
@@ -471,9 +442,7 @@ function avancarAposResposta() {
 }
 
 
-/* ========================================
-   RESTAURAR PARTIDA
-======================================== */
+//restaurar partida
 
 function continuarJogo() {
 
@@ -688,9 +657,7 @@ function continuarJogo() {
 }
 
 
-/* ========================================
-   FINAIS
-======================================== */
+//finais
 
 function finalizarJogo() {
 
@@ -733,26 +700,13 @@ function finalizarJogo() {
 }
 
 
-/* ========================================
-   OPÇÕES
-======================================== */
+//botões
 
-function abrirOpcoes() {
-
-    alert("Menu de opções em desenvolvimento.");
-
-}
-
-
-/* ========================================
-   EVENTOS DOS BOTÕES
-======================================== */
+//botões
 
 startButton.addEventListener("click", iniciarJogo);
 
 continueButton.addEventListener("click", continuarJogo);
-
-optionsButton.addEventListener("click", abrirOpcoes);
 
 nextButton.addEventListener("click", avancarJogo);
 
@@ -770,9 +724,7 @@ dialogueBox.addEventListener("click", function(event) {
 });
 
 
-/* ========================================
-   CONTROLES DO TECLADO
-======================================== */
+//teclado
 
 document.addEventListener("keydown", function(event) {
 
@@ -798,8 +750,5 @@ document.addEventListener("keydown", function(event) {
 });
 
 
-/* ========================================
-   INICIALIZAÇÃO
-======================================== */
-
+//iniciar
 console.log("O Jantar. iniciado com sucesso.");
