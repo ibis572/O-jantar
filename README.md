@@ -137,14 +137,14 @@ Mensagem final: o desperdício não é apenas o descarte de alimentos. É també
 O jogo utilizará uma variável numérica para representar o comportamento de Alma diante do desperdício alimentar. A pontuação inicial será 50, representando uma situação intermediária. As escolhas realizadas durante os capítulos modificarão esse valor.
 Comportamento
 Alteração
-Preparar quantidades adequadas      -10
-Descartar alimentos aproveitáveis   +10
-Organizar corretamente os alimentos -10
-Ignorar alimentos esquecidos        +10
+Preparar quantidades adequadas              -10
+Descartar alimentos aproveitáveis           +10
+Organizar corretamente os alimentos         -10
+Ignorar alimentos esquecidos                +10
 Aproveitar sobras armazenadas com segurança -10
-Ignorar registros de desperdício    +10
-Planejar as compras                 -10
-Manter os hábitos de excesso        +10
+Ignorar registros de desperdício            +10
+Planejar as compras                         -10
+Manter os hábitos de excesso                +10
 
 A variável será limitada entre 0 e 100.
 Determinação dos finais:
